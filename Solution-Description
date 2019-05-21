@@ -1,9 +1,11 @@
 The solution provided for the Mars Rovers problem can be roughly broken down into 3 different steps:
+
 Step 1:
 • Read the data from the .tsv test file.
 • Gather the required information from the data such as the starting byte of the chunk and size of the chunk.
 • Calculate the ending byte of the chunk as end_byte = start_byte + size – 1, to help us find which chunks overlap.
 • Fill the data structures with the relevant information.
+
 Step 2:
 • After gathering all the required information from the test files about the chunks, decide which data structure can best represent the information for further computations.
 • Here, we choose the directional graph to represent the chunks. The chunks act as vertices and an edge between chunks (u, v) exists if the following condition is met:
@@ -11,12 +13,15 @@ Step 2:
 • If the above condition is met, then the two chunks overlap and there exists a path between them.
 • Construct the directional graph using the above information.
 • Represent the graph as an adjacency list using Breadth First Algorithm.
+
 Step 3:
 • After constructing the adjacency list, the decisive step is to find the path or a list of chunks from the start_chunk to the end_chunk that covers the entire image with the minimum cost possible.
 • The problem is similar to finding the all the paths between the two given chunks and then deciding which has the minimum cost.
 • We use the Depth First Search Algorithm to find all the possible paths and output the path with the minimum cost.
+
 Possible Alternative Approaches:
 We can also use the Dijkstra’s algorithm or the A* algorithm to compute the shortest path between two vertices.
+
 Compiling and Running the file:
 • Compile: javac MarsRovers.java
 • Run: java MarsRovers
